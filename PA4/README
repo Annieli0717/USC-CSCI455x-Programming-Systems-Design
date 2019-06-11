@@ -1,0 +1,86 @@
+// Name: Dunxuan Li (Annie)
+// USC NetID: dunxuanl
+// USC ID: 6625999096
+// CS 455 PA4
+// Spring 2019
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+DL
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+Class Design:
+
+For this project, I used the second approach that is specified in assignment description.
+
+When designing my classes, my main goal is to make each class as independent
+as possible, and put everything together in the main method. Each class takes
+certain separate responsibilities:
+
+Class Rack:
+to create rack of Scrabble tiles and find all subsets of the rack.But subsets here is NOT
+all possible subsets. Instead, it forms all 'combinations' of the given letters but not
+'permutation.' The purpose of doing so is that we will use this subsets as a unique identifier
+(key) in AnagramDictionary class, but not values.I used TreeMap to store unique characters in a
+word and corresponding frequency. In this way, we can easily find the frequency of a given character.
+
+
+Class AnagramDictionary:
+Given a dictionary file, to create a HashMap which stores all anagrams of a same word into a
+same hash backet. To make each key unique and representative, I chose key to be an alphabetically
+ordered string of the word and all its anagrams.This class's functionality relates to the use of
+rack class. If a rack object gets all its combinations, then it can use each combination as a key
+in this HashMap to find all anagrams in dictionary file.
+
+Class ScoreTable:
+Compute each word's value using hard-coded score table. I stored each word's score into a TreeMap
+using the word as a key. Since we want to sort the score table in descending order in score, I
+implemented Comparator interface and sorted the table using sort method in Collections. Also, since
+for words with the same score, we want to sort the words in alphabetical order, I used TreeMap, so
+the sorting will be automatically done as a property of TreeMap
+
+Class WordFinder:
+Put everything together & handle command-line arguments. Read inputs from user. And based on user
+input word, create a Rack object to find all possible combinations of the word. Then call AnagramDictionary
+to obtain only legal words in dictionary file. At the end, for each legal word, compute each score
+by calling ScoreTable Class. In each step, I used an ArrayList to store anagrams.
+
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+
+
+
+
+
+
+
