@@ -1,2 +1,2 @@
 # USC-CSCI455x
-Projects
+Projects in CSCI 455x - Programming Systems Design
